@@ -1,5 +1,5 @@
 # Tinycode
-Exercises in making <512 byte demos
+Exercises in making small demos
 
 Consists of :    
 Sierpinski Gasket [351 Bytes]    
