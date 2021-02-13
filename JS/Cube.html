@@ -1,34 +1,23 @@
 <canvas id="C" width="200" height="200"></canvas>
-
 <script>
-y = document.getElementById("C");
-z = y.getContext("2d")
-a = 0;b = 25;c = 100
-
-var interval = setInterval(function(){
-d = Math.sin(a);e = Math.sin(a-1.56)
-f = Math.cos(a);g = Math.cos(a-1.56)
-h = d*2.8;i = e*2.8
-
-
-z.clearRect(0, 0, 200, 200);
-if(a>1.56){a=0} else {a=a+0.001}
-z.beginPath();
-z.lineTo((h)*b+c,(f-2)*b+c);
-z.lineTo((-i)*b+c, (-g-2)*b+c);
-z.lineTo((-i)*b+c, (-g+2)*b+c);
-z.lineTo((h)*b+c,(f+2)*b+c);
-z.lineTo((h)*b+c,(f-2)*b+c);
-z.lineTo((i)*b+c, (g-2)*b+c);
-z.lineTo((i)*b+c, (g+2)*b+c); 
-z.lineTo((h)*b+c,(f+2)*b+c); 
-z.moveTo((i)*b+c, (g+2)*b+c); 
-z.lineTo((-h)*b+c, (-f+2)*b+c); 
-z.lineTo((-h)*b+c, (-f-2)*b+c);
-z.lineTo((i)*b+c, (g-2)*b+c);
-z.moveTo((-h)*b+c, (-f-2)*b+c);
-z.lineTo((-i)*b+c, (-g-2)*b+c); 
-z.moveTo((-h)*b+c, (-f+2)*b+c);
-z.lineTo((-i)*b+c, (-g+2)*b+c); z.stroke();
-}, 0);
+y=document.getElementById("C")
+z=y.getContext("2d")
+a=0;b=25;c=100;v=1.56
+var interval=setInterval(function(){
+d=Math.sin(a);e=Math.sin(a-v)
+f=Math.cos(a);g=Math.cos(a-v)
+h=d*2.8;i=e*2.8;p=(h)*b+c;q=(i)*b+c;r=(-i)*b+c
+s=(-h)*b+c;t=(-f+2)*b+c;u=(-f-2)*b+c
+function j(){z.lineTo(p,(f-2)*b+c)}
+function k(){z.lineTo(r,(-g-2)*b+c)}
+function l(){z.lineTo(r,(-g+2)*b+c)}
+function m(){z.lineTo(p,(f+2)*b+c)}
+function n(){z.lineTo(q,(g-2)*b+c)}
+function o(){z.lineTo(q,(g+2)*b+c)}
+z.clearRect(0, 0, 200, 200)
+if(a>v){a=0} else {a=a+0.001};z.beginPath()
+j();k();l();m();j();n();o();m();o()
+z.lineTo(s,t);z.lineTo(s,u);n()
+z.moveTo(s,u);k();z.moveTo(s,t)
+l(); z.stroke()});
 </script>
