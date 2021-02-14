@@ -4,7 +4,7 @@ var b=a.getContext("2d");
 x=0.01;y=0;z=0;c=10;d=28;e=8/3;t=0.001
 var s=setInterval(function(){
 b.clearRect(0,0,999,999)
-x=x+(c*(y-x))*t;y=y+(x*(d-z)-y)*t
-z=z+(x*y-e*z)*t
+x+=(c*(y-x))*t;y+=(x*(d-z)-y)*t
+z+=(x*y-e*z)*t
 b.lineTo(x*17+500,y*17+500);b.stroke()});
 </script>
