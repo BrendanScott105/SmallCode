@@ -1,9 +1,10 @@
-<canvas id="L" width="500" height="500"></canvas><script>
-var a = document.getElementById("L");
-var b = a.getContext("2d");
-x=0.01;y=0;z=0;c=10;d=28;e=8/3;dt=0.001
+<canvas id="L"width="999"height="999"></canvas><script>
+var a=document.getElementById("L");
+var b=a.getContext("2d");
+x=0.01;y=0;z=0;c=10;d=28;e=8/3;t=0.001
 var s=setInterval(function(){
-x=x+(c*(y-x))*dt;y=y+(x*(d-z)-y)*dt
-z=z+(x*y-e*z)*dt
-b.fillRect(x*7+250,y*7+250,1,1)});
+b.clearRect(0,0,999,999)
+x=x+(c*(y-x))*t;y=y+(x*(d-z)-y)*t
+z=z+(x*y-e*z)*t
+b.lineTo(x*17+500,y*17+500);b.stroke()});
 </script>
