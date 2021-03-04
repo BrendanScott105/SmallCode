@@ -1,0 +1,9 @@
+<canvas id="Canvas" width="800" height="800" style="border:1px solid #d3d3d3;"></canvas><script>c = document.getElementById("Canvas");
+ctx = c.getContext("2d");var L1 = 175;var L2 = 175;var M1 = 10;var M2 = 10;var A1 = Math.PI/2;var A2 = Math.PI/2;var A1_V = 0;var A2_V = 0;var A1_A = 0;var A2_A = 0;
+var G = 1;var RDPX = [];var RDPY = [];ctx.strokeStyle = "#000000";ctx.fillStyle = "#000000";var main = setInterval(function(){ctx.clearRect(0,0,800,800);var X1 = L1 * Math.sin(A1);
+var Y1 = L1 * Math.cos(A1);ctx.beginPath();ctx.moveTo(400, 400);ctx.lineTo(400 + X1, 400 + Y1);ctx.stroke();ctx.fillRect(400 - (M1) + X1, 400 - (M1) + Y1, M1*2, M1*2);
+ctx.stroke();var X2 = X1 + L2 * Math.sin(A2);var Y2 = Y1 + L2 * Math.cos(A2);ctx.moveTo(400 + X1, 400 + Y1);ctx.lineTo(400 + X2, 400 + Y2);ctx.stroke();
+ctx.fillRect(400 - (M2) + X2, 400 - (M2) + Y2, M2*2, M2*2);ctx.stroke();ctx.closePath();RDPX.push(400 + X2);RDPY.push(400 + Y2);if(RDPX.length > 100){RDPX.shift(); RDPY.shift();}
+for (var i = 1; i < RDPX.length; i++){ctx.moveTo(RDPX[i-1], RDPY[i-1]);ctx.lineTo(RDPX[i], RDPY[i]);ctx.stroke();}A1_V += A1_A;A2_V += A2_A;A1 += A1_V;A2 += A2_V;
+A1_A = ((-G*(2*M1+M2)*Math.sin(A1))-(M2*G*Math.sin(A1-2*A2))-(2*Math.sin(A1-A2)*M2*(A2_V*A2_V*L2+A1_V*A1_V*L1*Math.cos(A1-A2))))/(L1*(2*M1+M2-M2*Math.cos(2*A1-2*A2)));
+A2_A = (2*Math.sin(A1-A2)*(A1_V*A1_V*L1*(M1+M2)+G*(M1+M2)*Math.cos(A1)+A2_V*A2_V*L2*M2*Math.cos(A1-A2)))/(L1*(2*M1+M2-M2*Math.cos(2*A1-2*A2)));},17);</script>
