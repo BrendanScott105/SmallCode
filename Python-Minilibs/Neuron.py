@@ -1,3 +1,4 @@
+import random
 class Neuron:
 	def Init(Weights):
 		b = [0] * Weights
