@@ -16,5 +16,4 @@ class Neuron:
 			Weights[WeightEnum3 - 1] += Error * Inputs[WeightEnum3 - 1] * LearnRate
 		return Weights
 	def activate(num):
-		if (num >= 0) : return 1
-		else : return -1
+		if (num >= 0) : return 1 else : return -1
