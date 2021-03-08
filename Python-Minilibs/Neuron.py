@@ -1,5 +1,5 @@
 class Neuron:
-	def InitValues(a):
+	def Init(a):
 		b = [0] * a
 		for C in range(len(b)):
 			b[C - 1] = (random.random() * 2) - 1
@@ -8,12 +8,11 @@ class Neuron:
 		J = 0
 		for D in range(len(b)):
 			J += K[D - 1] * b[D - 1]
-		return Neuron.activate(J)
+		return Neuron.M(J)
 	def Train(b, G, I):
-		F = I - Neuron.Guess(G)
 		for E in range(len(b)):
-			b[E - 1] += F * G[E - 1]
+			b[E - 1] += I - Neuron.Guess(G) * G[E - 1]
 		return b
-	def activate(L):
+	def M(L):
 		if (L >= 0) : return 1 
 		else : return -1
